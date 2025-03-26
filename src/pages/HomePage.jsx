@@ -5,9 +5,8 @@ import Threads from "../components/Threads.jsx";
 import "./HomePage.css";
 
 const HomePage = () => {
-  // For GitHub Pages deployment, we need to account for the base path
-  const baseUrl = import.meta.env.BASE_URL || '/';
-  const imagePath = `${baseUrl}images/profile.jpg`;
+  // Hardcoded approach specifically for your GitHub Pages site with nested path
+  const imagePath = '/portfolio-new/images/profile.jpg';
 
   return (
     <div className="home-container">
