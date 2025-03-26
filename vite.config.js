@@ -4,6 +4,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/portfolio-new", // This is the key change for GitHub Pages
   plugins: [react()],
   resolve: {
     alias: {
