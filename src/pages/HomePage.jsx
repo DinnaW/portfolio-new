@@ -5,6 +5,10 @@ import Threads from "../components/Threads.jsx";
 import "./HomePage.css";
 
 const HomePage = () => {
+  // For GitHub Pages deployment, we need to account for the base path
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  const imagePath = `${baseUrl}images/profile.jpg`;
+
   return (
     <div className="home-container">
       <nav className="navbar">
@@ -22,7 +26,7 @@ const HomePage = () => {
           <span></span>
         </button>
       </nav>
-
+      
       <section className="hero-section">
         {/* Threads background */}
         <div className="hero-threads-background">
@@ -33,7 +37,7 @@ const HomePage = () => {
             enableMouseInteraction={true}
           />
         </div>
-
+        
         <div className="hero-content">
           <div className="greeting">Hello, I'm</div>
           <div className="name-focus">
@@ -81,12 +85,12 @@ const HomePage = () => {
             </a>
           </div>
         </div>
-
+        
         <div className="hero-image">
           <div className="image-container">
             <div className="blue-glow"></div>
             <img
-              src="/images/profile.jpg"
+              src={imagePath}
               alt="Dinura Wanigasekara"
               className="profile-image"
             />

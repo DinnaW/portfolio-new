@@ -4,7 +4,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/portfolio-new", // This is the key change for GitHub Pages
+  base: '/portfolio-new/', // Added trailing slash
   plugins: [react()],
   resolve: {
     alias: {
