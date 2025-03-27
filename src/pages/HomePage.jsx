@@ -8,16 +8,24 @@ const HomePage = () => {
   // Handle mobile menu toggle
   const handleNavToggle = () => {
     const navLinks = document.querySelector('.nav-links');
+    const navToggle = document.querySelector('.nav-toggle');
     if (navLinks) {
       navLinks.classList.toggle('active');
+    }
+    if (navToggle) {
+      navToggle.classList.toggle('active');
     }
   };
 
   // Handle navigation link clicks (for mobile menu auto-close)
   const handleNavLinkClick = () => {
     const navLinks = document.querySelector('.nav-links');
+    const navToggle = document.querySelector('.nav-toggle');
     if (navLinks && navLinks.classList.contains('active')) {
       navLinks.classList.remove('active');
+    }
+    if (navToggle && navToggle.classList.contains('active')) {
+      navToggle.classList.remove('active');
     }
   };
 
@@ -66,7 +74,7 @@ const HomePage = () => {
           <div className="title-rotation">
             <span className="i-am">I am a </span>
             <RotatingText
-              texts={['Full Stack Developer', 'Frontend Devoloper', 'UI/UX Designer', 'Mobile App Developer']}
+              texts={['Full Stack Developer', 'Frontend Developer', 'UI/UX Designer', 'Mobile App Developer']}
               mainClassName="title-rotating-text"
               staggerFrom={"last"}
               initial={{ y: "100%" }}
@@ -107,6 +115,9 @@ const HomePage = () => {
               className="profile-image"
             />
             <div className="profile-outline"></div>
+            <div className="ambient-light"></div>
+            <div className="circle-decoration circle-1"></div>
+            <div className="circle-decoration circle-2"></div>
           </div>
         </div>
       </section>
