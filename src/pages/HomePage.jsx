@@ -5,25 +5,42 @@ import Threads from "../components/Threads.jsx";
 import "./HomePage.css";
 
 const HomePage = () => {
+  // Handle mobile menu toggle
+  const handleNavToggle = () => {
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks) {
+      navLinks.classList.toggle('active');
+    }
+  };
+
+  // Handle navigation link clicks (for mobile menu auto-close)
+  const handleNavLinkClick = () => {
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks && navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+    }
+  };
+
   return (
     <div className="home-container">
       <nav className="navbar">
         <div className="logo">DW</div>
         <div className="nav-links">
-          <a href="#home" className="active">Home</a>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
+          <a href="#home" className="active" onClick={handleNavLinkClick}>Home</a>
+          <a href="#about" onClick={handleNavLinkClick}>About</a>
+          <a href="#projects" onClick={handleNavLinkClick}>Projects</a>
+          <a href="#services" onClick={handleNavLinkClick}>Services</a>
+          <a href="#achievements" onClick={handleNavLinkClick}>Achievements</a>
+          <a href="#contact" onClick={handleNavLinkClick}>Contact</a>
         </div>
-        <button className="nav-toggle">
+        <button className="nav-toggle" onClick={handleNavToggle}>
           <span></span>
           <span></span>
           <span></span>
         </button>
       </nav>
 
-      <section className="hero-section">
+      <section id="home" className="hero-section">
         {/* Threads background */}
         <div className="hero-threads-background">
           <Threads
@@ -66,8 +83,8 @@ const HomePage = () => {
             A passionate developer with experience in building robust, user-focused applications that drive business results.
           </div>
           <div className="hero-buttons">
-            <button className="btn primary">View Projects</button>
-            <button className="btn secondary">Contact Me</button>
+            <a href="#projects" className="btn primary">View Projects</a>
+            <a href="#contact" className="btn secondary">Contact Me</a>
           </div>
           <div className="social-links">
             <a href="https://github.com/DinnaW" target="_blank" rel="noreferrer">
