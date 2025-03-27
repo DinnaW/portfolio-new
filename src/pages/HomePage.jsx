@@ -67,7 +67,7 @@ const HomePage = () => {
           <div className="title-rotation">
             <span className="i-am">I am a </span>
             <RotatingText
-              texts={['Full Stack Developer', 'Frontend Specialist', 'React Developer', 'Java Developer']}
+              texts={['Full Stack Developer', 'Frontend Devoloper', 'UI/UX Designer', 'Mobile App Developer']}
               mainClassName="title-rotating-text"
               staggerFrom={"last"}
               initial={{ y: "100%" }}
