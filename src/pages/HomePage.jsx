@@ -24,7 +24,6 @@ const HomePage = () => {
   return (
     <div className="home-container">
       <nav className="navbar">
-        <div className="logo">DW</div>
         <div className="nav-links">
           <a href="#home" className="active" onClick={handleNavLinkClick}>Home</a>
           <a href="#about" onClick={handleNavLinkClick}>About</a>

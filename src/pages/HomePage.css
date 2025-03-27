@@ -43,12 +43,12 @@ body {
   padding: 0 5%;
 }
 
-/* Navbar styles */
+/* Updated Navbar styles */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the nav links */
   align-items: center;
-  padding: 1.5rem 5%;
+  padding: 1rem 5%;
   background-color: rgba(9, 27, 54, 0.95);
   backdrop-filter: blur(15px);
   position: fixed;
@@ -58,19 +58,12 @@ body {
   z-index: 100;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
   border-bottom: 1px solid rgba(0, 163, 255, 0.08);
-}
-
-.logo {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--highlight-blue);
-  text-shadow: 0 0 15px rgba(0, 163, 255, 0.5);
-  letter-spacing: -1px;
+  height: 60px; /* Reduced height */
 }
 
 .nav-links {
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem; /* Slightly reduced gap */
 }
 
 .nav-links a {
@@ -79,9 +72,10 @@ body {
   font-weight: 500;
   transition: var(--transition);
   position: relative;
-  font-size: 0.95rem;
+  font-size: 0.9rem; /* Slightly smaller font */
   text-transform: uppercase;
   letter-spacing: 1px;
+  padding: 0.5rem 0; /* Add some padding for tap/click area */
 }
 
 .nav-links a:hover,
@@ -94,7 +88,7 @@ body {
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: -5px;
+  bottom: -2px; /* Adjusted position */
   left: 0;
   background-color: var(--highlight-blue);
   transition: var(--transition);
@@ -112,7 +106,8 @@ body {
   cursor: pointer;
   width: 30px;
   height: 24px;
-  position: relative;
+  position: absolute;
+  right: 5%;
   z-index: 101;
 }
 
@@ -132,7 +127,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10rem 10% 5rem;
+  padding: 8rem 10% 5rem; /* Adjusted top padding for smaller navbar */
   position: relative;
   overflow: hidden;
 }
@@ -511,7 +506,8 @@ section {
 .about-section,
 .work-section,
 .contact-section,
-.achievements-section {
+.achievements-section,
+.services-section {
   opacity: 1;
   transform: translateY(0);
   transition: all 0.8s ease;
@@ -520,7 +516,8 @@ section {
 .about-section.active,
 .work-section.active,
 .contact-section.active,
-.achievements-section.active {
+.achievements-section.active,
+.services-section.active {
   opacity: 1;
   transform: translateY(0);
 }
@@ -528,7 +525,7 @@ section {
 /* Responsive styles */
 @media (max-width: 1200px) {
   .hero-section {
-    padding: 10rem 5% 5rem;
+    padding: 8rem 5% 5rem;
   }
   
   .name-focus .focus-word {
@@ -552,7 +549,7 @@ section {
     flex-direction: column-reverse;
     text-align: center;
     gap: 3rem;
-    padding-top: 8rem;
+    padding-top: 7rem; /* Adjusted for smaller navbar */
   }
   
   .hero-content {
@@ -602,7 +599,9 @@ section {
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 1rem 5%;
+    justify-content: flex-end; /* Move content to the right */
+    padding: 0.8rem 5%;
+    height: 55px; /* Even smaller on mobile */
   }
   
   .nav-links {
@@ -615,7 +614,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(16, 42, 76, 0.98);
+    background-color: rgba(9, 27, 54, 0.98);
     gap: 2rem;
     transform: translateX(100%);
     transition: var(--transition);
@@ -631,6 +630,19 @@ section {
   
   .nav-toggle {
     display: block;
+  }
+  
+  /* Hamburger menu animation */
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
   }
   
   .greeting {
@@ -678,9 +690,18 @@ section {
   }
 }
 
-@media (max-width: 576px) {  
+@media (max-width: 576px) {
+  .navbar {
+    height: 50px;
+    padding: 0.7rem 5%;
+  }
+  
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+  
   .hero-section {
-    padding: 8rem 5% 3rem;
+    padding: 6.5rem 5% 3rem;
   }
   
   .greeting {
