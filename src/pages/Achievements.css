@@ -1,4 +1,4 @@
-/* Achievements.css - Updated with responsive images */
+/* Achievements.css - Updated with responsive images and removed certificate button */
 .achievements-section {
   padding: 8rem 0;
   background-color: var(--primary-dark);
@@ -165,11 +165,12 @@
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0; /* Adjusted since there's no certificate button */
 }
 
 .achievement-highlights {
   margin-top: 1.5rem;
+  margin-bottom: 0.5rem; /* Added bottom margin to create space at card bottom */
 }
 
 .highlight-item {
@@ -190,33 +191,6 @@
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.5;
-}
-
-.view-certificate {
-  display: inline-flex;
-  align-items: center;
-  margin-top: auto; /* Push to bottom of content area */
-  padding: 0.7rem 1.5rem;
-  background-color: rgba(0, 163, 255, 0.1);
-  color: var(--highlight-blue);
-  border: 1px solid rgba(0, 163, 255, 0.3);
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  align-self: flex-start; /* Align to left side */
-}
-
-.view-certificate i {
-  margin-right: 0.7rem;
-}
-
-.view-certificate:hover {
-  background-color: var(--highlight-blue);
-  color: var(--primary-dark);
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 163, 255, 0.3);
 }
 
 /* Floating animations for the cards */
@@ -346,10 +320,5 @@
   
   .highlight-text {
     font-size: 0.9rem;
-  }
-  
-  .view-certificate {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
   }
 }

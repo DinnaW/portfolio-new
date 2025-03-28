@@ -18,13 +18,12 @@ const Achievements = () => {
       organization: "CCC School of Cricket",
       date: "2018",
       description: "Recognized for exceptional performance, leadership skills, and sportsmanship throughout the cricket season. Led the team to multiple tournament victories while maintaining the highest batting average.",
-      image: "/images/cricket.jpg", // You'll need to add these images
+      image: "/images/cricket.jpg", 
       highlights: [
         "Captained the team to regional championship victory",
         "Highest batting average in the league",
         "Demonstrated exceptional leadership and team building skills"
-      ],
-      certificateLink: "#"
+      ]
     },
     {
       id: 2,
@@ -37,8 +36,7 @@ const Achievements = () => {
         "Key player in Team Colombo's championship-winning campaign",
         "Demonstrated exceptional batting skills throughout the tournament",
         "Selected after rigorous trials against top cricket talent in the region"
-      ],
-      certificateLink: "#"
+      ]
     },
     {
       id: 3,
@@ -51,10 +49,8 @@ const Achievements = () => {
         "Match-winning batting performance in the semi-final with highest run score",
         "Decisive bowling spell in the final that turned the match in our favor",
         "Demonstrated exceptional pressure handling in crucial match situations"
-      ],
-      certificateLink: "#"
-    },
-   
+      ]
+    }
   ];
 
   return (
@@ -95,11 +91,6 @@ const Achievements = () => {
                     </div>
                   ))}
                 </div>
-                
-                <a href={achievement.certificateLink} className="view-certificate">
-                  <i className="fas fa-certificate"></i>
-                  View Certificate
-                </a>
               </div>
             </div>
           ))}
