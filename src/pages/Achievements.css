@@ -1,4 +1,4 @@
-/* Achievements.css */
+/* Achievements.css - Updated with responsive images */
 .achievements-section {
   padding: 8rem 0;
   background-color: var(--primary-dark);
@@ -65,6 +65,8 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .achievement-card:hover {
@@ -75,11 +77,14 @@
 .achievement-image {
   position: relative;
   width: 100%;
-  height: 220px;
+  padding-top: 56.25%; /* 16:9 aspect ratio for consistent image areas */
   overflow: hidden;
 }
 
 .achievement-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -104,6 +109,9 @@
 .achievement-content {
   padding: 2rem;
   position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .achievement-date {
@@ -187,7 +195,7 @@
 .view-certificate {
   display: inline-flex;
   align-items: center;
-  margin-top: 1.5rem;
+  margin-top: auto; /* Push to bottom of content area */
   padding: 0.7rem 1.5rem;
   background-color: rgba(0, 163, 255, 0.1);
   color: var(--highlight-blue);
@@ -197,6 +205,7 @@
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
+  align-self: flex-start; /* Align to left side */
 }
 
 .view-certificate i {
@@ -268,6 +277,20 @@
   }
 }
 
+@media (max-width: 992px) {
+  .achievements-section {
+    padding: 7rem 0;
+  }
+  
+  .achievement-image {
+    padding-top: 60%; /* Slightly taller aspect ratio on medium screens */
+  }
+  
+  .achievement-content {
+    padding: 1.8rem;
+  }
+}
+
 @media (max-width: 768px) {
   .achievements-section {
     padding: 6rem 0;
@@ -283,6 +306,10 @@
     margin-left: auto;
     margin-right: auto;
   }
+  
+  .achievement-image {
+    padding-top: 65%; /* Taller aspect ratio on smaller screens */
+  }
 }
 
 @media (max-width: 576px) {
@@ -295,7 +322,7 @@
   }
   
   .achievement-image {
-    height: 180px;
+    padding-top: 70%; /* Even taller aspect ratio on mobile */
   }
   
   .achievement-content {
@@ -304,5 +331,25 @@
   
   .achievement-title {
     font-size: 1.4rem;
+  }
+  
+  .achievement-date {
+    top: -30px;
+    right: 15px;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .achievement-description {
+    font-size: 0.95rem;
+  }
+  
+  .highlight-text {
+    font-size: 0.9rem;
+  }
+  
+  .view-certificate {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
   }
 }
